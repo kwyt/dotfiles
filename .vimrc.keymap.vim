@@ -1,0 +1,10 @@
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap gj j
+nnoremap gk k
+nnoremap <S-h> ^
+nnoremap <S-l> $
+nnoremap == gg=G''
