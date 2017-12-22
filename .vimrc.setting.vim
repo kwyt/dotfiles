@@ -1,15 +1,6 @@
 " シンタックスハイライトを有効
 syntax on
 
-" デフォルトの文字コード
-set encoding=utf-8
-
-" iTerm上の文字コード
-set termencoding=utf-8
-
-" ファイルフォーマットの種類
-set fileformats=unix,dos,mac
-
 " highlight Normal ctermbg=none
 
 " タブ文字挿入
@@ -64,11 +55,23 @@ set hlsearch
 " 履歴の上限数
 set history=500
 
+set syntax=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Golang linter
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
 " コメント行から改行した行をコメントにしないようにする
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
   autocmd BufEnter * setlocal formatoptions-=o
+augroup END
+
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
 " vim-tags

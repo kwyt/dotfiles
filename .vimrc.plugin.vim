@@ -34,6 +34,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'mac' : 'make',
 \    },
 \ }
+NeoBundle 'kazuph/previm', 'feature/add-plantuml-plugin'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle "aklt/plantuml-syntax"
 
 call neobundle#end()
 call unite#set_profile('default', 'context', {'ignorecase':1})
@@ -47,12 +50,6 @@ let g:neocomplete#enable_smart_case = 1
 let g:unite_enable_start_insert = 1
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
-
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-nnoremap <silent> ,a  :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> ,f  :<C-u>Unite -buffer-name=files file<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -71,7 +68,7 @@ if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
 
-autocmd VimEnter * execute 'NERDTree'
+" autocmd VimEnter * execute 'NERDTree'
 
 " Go
 let g:go_highlight_functions = 1
@@ -80,6 +77,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {
