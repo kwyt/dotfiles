@@ -59,8 +59,8 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Golang linter
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " コメント行から改行した行をコメントにしないようにする
 augroup auto_comment_off

@@ -37,6 +37,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'kazuph/previm', 'feature/add-plantuml-plugin'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle "aklt/plantuml-syntax"
+NeoBundle 'rking/ag.vim'
+NeoBundle 'cohama/lexima.vim'
 
 call neobundle#end()
 call unite#set_profile('default', 'context', {'ignorecase':1})
